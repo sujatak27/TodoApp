@@ -1,30 +1,30 @@
-//import express from "express"
-
-const express = require ("express");
-const clc= require("cli-color");
-const authRoute = require("./routes/authRoute");
-const connectMongoDb = require("./utils/connectMongoDb");
 require("dotenv/config");
+//import express from "express"
+const express = require("express");
+const clc = require("cli-color");
 
+// File imports
+const connectMongoDb = require("./utils/connectMongoDb");
+const authRoute = require("./routes/authRoute");
 
 const app = express();
 const PORT = process.env.PORT;
 
-
-
-//middleware
-app.set ("view engine","ejs");
-app.use(express.urlencoded({extended: true}));
+// Global middlewares
+app.set("view engine", "ejs");
+app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
+// Routes
+app.use("/", authRoute);
 
-
-//route
-app.use("/",authRoute)
-
-app.listen (PORT,()=>{
-    console.log(clc.yellowBright.bold(`Sever is running at PORT : ${PORT}`));
-    //db connection
-    connectMongoDb();
-})
-
+app.listen(PORT, () => {
+  console.log(
+    clc.yellowBright.bold(
+      `Server is connected on port: ${clc.greenBright.italic(PORT)}`,
+    ),
+  );
+  console.log(clc.greenBright.bold.italic(`http://localhost:${PORT}`));
+  //db connection
+  connectMongoDb();
+});

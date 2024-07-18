@@ -1,15 +1,19 @@
 const express = require("express");
-const {signupForm, loginForm, signup, login}= require("../controllers/authController.js");
 
-
+// Controller imports
+const {
+  signupForm,
+  signup,
+  loginForm,
+  login,
+} = require("../controllers/authController.js");
 
 const router = express.Router();
 
-router.get("/signup",signupForm);
-router.get("/login",loginForm);
-router.post("/signup",signup);
-router.post("/login",login);
+// Sub Routes
+router.get("/signup", signupForm);
+router.post("/signup", signup);
+router.get("/login", loginForm);
+router.post("/login", login);
 
-
-
-module.exports= router;
+module.exports = router;
