@@ -9,6 +9,7 @@ const connectMongoDb = require("./utils/connectMongoDb.js");
 const authRoute = require("./routes/authRoute.js");
 const taskRoute = require("./routes/taskRoute.js");
 
+//constants
 const app = express();
 const PORT = process.env.PORT;
 
