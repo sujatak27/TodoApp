@@ -1,4 +1,4 @@
-const express = require("express");
+const { Router } = require("express");
 
 // Controller imports
 const {
@@ -8,7 +8,7 @@ const {
   login,
 } = require("../controllers/authController.js");
 
-const router = express.Router();
+const router = Router();
 
 // Sub Routes
 router.get("/signup", signupForm);
