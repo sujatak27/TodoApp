@@ -5,7 +5,6 @@ const clc = require("cli-color");
 
 // File imports
 const connectMongoDb = require("./utils/connectMongoDb.js");
-
 const authRoute = require("./routes/authRoute.js");
 const taskRoute = require("./routes/taskRoute.js");
 
@@ -21,7 +20,7 @@ app.use(express.json());
 // Routes
 app.use("/", authRoute);
 
-// app.use("/dashboard", dashboardRoute);
+
 app.use("/task", taskRoute);
 
 app.listen(PORT, () => {

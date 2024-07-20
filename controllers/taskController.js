@@ -5,12 +5,12 @@ const createTask = async (req, res) => {
   try {
     const { title, description, status, assignedTo } = req.body;
 
-    const { userId } = req.params;
+    const { use} = req.params;rId 
     if (!title || !description || !status || !assignedTo || !userId) {
       return res.status(400).json({ error: "All fields are required" });
     }
 
-    const user = await User.findById(userId);
+    const user = await User.findOne({userId});
     if (!user) {
       return res.status(404).json({ message: "User not found" });
     }
