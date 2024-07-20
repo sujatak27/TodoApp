@@ -9,8 +9,8 @@ const {
 
 const router = Router();
 
-router.post("/create/:id", createTask);
-router.put("/update/:id", updateTask);
-router.delete("/delete/:id", deleteTask);
+router.post("/create/:userId", createTask);
+router.put("/update/:userId", updateTask);
+router.delete("/delete/:userId", deleteTask);
 
 module.exports = router;

@@ -27,8 +27,8 @@ app.use("/task", taskRoute);
 app.listen(PORT, () => {
   console.log(
     clc.yellowBright.bold(
-      `Server is connected on port: ${clc.greenBright.italic(PORT)}`
-    )
+      `Server is connected on port: ${clc.greenBright.italic(PORT)}`,
+    ),
   );
   console.log(clc.greenBright.bold.italic(`http://localhost:${PORT}`));
   //db connection
